@@ -120,6 +120,8 @@ void pybind_voxelgrid(py::module &m) {
             .def("create_from_octree", &geometry::VoxelGrid::CreateFromOctree,
                  "octree"_a
                  "Convert from Octree.")
+            .def("get_voxels", &geometry::VoxelGrid::GetVoxels,
+                  "Get a list of ``Voxel``: Voxels contained in voxel grid")
             .def_static("create_dense", &geometry::VoxelGrid::CreateDense,
                         "Creates a voxel grid where every voxel is set (hence "
                         "dense). This is a useful starting point for voxel "
